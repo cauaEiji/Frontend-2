@@ -62,6 +62,39 @@
       </p>
     </section>
 
+    <!-- IP INFO SECTION -->
+    <section id="ip-section">
+
+      <div class="search-box">
+        <div class="search-input-row">
+          <input type="text" id="ip-input" placeholder="Digite um endereço IP (ex: 8.8.8.8)" autocomplete="off" />
+          <button id="btn-search">Buscar</button>
+          <button id="btn-detect">Detectar meu IP</button>
+        </div>
+        <p id="error-msg" class="error-msg" hidden></p>
+      </div>
+
+      <div id="results-card" class="results-card" hidden>
+        <h2 class="results-title">Informações do IP</h2>
+        <ul class="results-list">
+          <li><span class="label">IP</span><span id="res-ip"></span></li>
+          <li><span class="label">Cidade</span><span id="res-city"></span></li>
+          <li><span class="label">Região / Estado</span><span id="res-region"></span></li>
+          <li><span class="label">País</span><span id="res-country"></span></li>
+          <li><span class="label">Localização</span><span id="res-loc"></span></li>
+          <li><span class="label">Provedor</span><span id="res-org"></span></li>
+          <li><span class="label">Timezone</span><span id="res-timezone"></span></li>
+        </ul>
+        <button id="btn-favorite">Adicionar aos Favoritos</button>
+      </div>
+
+      <div id="favorites-section" class="favorites-section" hidden>
+        <h2 class="results-title">Favoritos</h2>
+        <ul id="favorites-list" class="favorites-list"></ul>
+      </div>
+
+    </section>
+
     <!-- QR CODE -->
 
     <div class="chr-home-qr-popup">
@@ -85,5 +118,9 @@
         </div>
       </div>
     </div>
+    <script src="./js/api.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
