@@ -5,7 +5,7 @@
 1. Clone ou baixe este repositório:
 
 ```bash
-git clone https://github.com/cauaEiji/Trabalho-frontend.git
+git clone https://github.com/cauaEiji/Frontend-2.git
 ```
 
 2. Mantenha os nomes dos arquivos conforme estão no projeto.
