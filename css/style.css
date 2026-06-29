@@ -196,6 +196,22 @@ h1 {
   width: 160px;
   z-index: 10;
   height: 230px;
+  transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+.chr-home-qr-popup--collapsed {
+  width: 36px;
+  height: 50px;
+  padding: 10px 6px;
+}
+
+.chr-home-qr-popup--collapsed .chr-home-qr-popup__body {
+  display: none;
+}
+
+.chr-home-qr-popup--collapsed .chr-home-qr-popup__inner {
+  min-height: 30px;
 }
 
 .chr-home-qr-popup__inner {
@@ -239,12 +255,25 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  z-index: 11;
 }
 
 .arrow-tab svg {
   width: 24px;
   height: 22px;
-} 
+  transition: transform 0.3s ease;
+}
+
+.chr-home-qr-popup--collapsed .arrow-tab {
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+}
+
+.chr-home-qr-popup--collapsed .arrow-tab svg {
+  transform: rotate(180deg);
+}
 
 /* ── IP Info Section ── */
 
@@ -455,6 +484,46 @@ h1 {
   background: #fce8e6;
 }
 
+/* ── Hamburger ── */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #5f6368;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+nav.nav--open .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+nav.nav--open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+nav.nav--open .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ── Tablet ── */
 @media (max-width: 768px) {
   nav {
@@ -500,28 +569,40 @@ h1 {
 /* Celular */
 @media (max-width: 480px) {
   nav {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 10px 12px;
-    gap: 8px;
+    position: relative;
+    flex-wrap: nowrap;
+    height: 64px;
+    padding: 0 12px;
+    gap: 0;
+    justify-content: space-between;
   }
 
-  .logo img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo span {
-    font-size: 17px;
+  .hamburger {
+    display: flex;
   }
 
   .links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 8px 0;
     gap: 0;
   }
 
+  nav.nav--open .links {
+    display: flex;
+  }
+
   .links a {
-    font-size: 12px;
-    padding: 8px 8px;
+    font-size: 15px;
+    padding: 14px 20px;
+    border-radius: 0;
   }
 
   .hero {
