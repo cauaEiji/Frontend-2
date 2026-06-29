@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.setAttribute('aria-expanded', open);
   });
 
+  const qrPopup = document.querySelector('.chr-home-qr-popup');
+  const arrowTab = document.querySelector('.arrow-tab');
+
+  arrowTab.addEventListener('click', (e) => {
+    e.stopPropagation();
+    qrPopup.classList.toggle('chr-home-qr-popup--collapsed');
+  });
+
   document.addEventListener('click', (e) => {
     if (!nav.contains(e.target)) {
       nav.classList.remove('nav--open');

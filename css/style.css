@@ -196,6 +196,22 @@ h1 {
   width: 160px;
   z-index: 10;
   height: 230px;
+  transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+.chr-home-qr-popup--collapsed {
+  width: 36px;
+  height: 50px;
+  padding: 10px 6px;
+}
+
+.chr-home-qr-popup--collapsed .chr-home-qr-popup__body {
+  display: none;
+}
+
+.chr-home-qr-popup--collapsed .chr-home-qr-popup__inner {
+  min-height: 30px;
 }
 
 .chr-home-qr-popup__inner {
@@ -239,12 +255,25 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  z-index: 11;
 }
 
 .arrow-tab svg {
   width: 24px;
   height: 22px;
-} 
+  transition: transform 0.3s ease;
+}
+
+.chr-home-qr-popup--collapsed .arrow-tab {
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+}
+
+.chr-home-qr-popup--collapsed .arrow-tab svg {
+  transform: rotate(180deg);
+}
 
 /* ── IP Info Section ── */
 
