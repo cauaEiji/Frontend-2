@@ -48,6 +48,7 @@ Organize os arquivos da seguinte forma:
 2. Instale a extensão **Live Server**
 3. Clique com o botão direito no `index.html`
 4. Selecione **"Open with Live Server"**
+5. Observação (Trabalhamos em 2 branchs, então temos commits diferentes mas que fazem parte do mesmo projeto) 
 
 ## Deploy
 
