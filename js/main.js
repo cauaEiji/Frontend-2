@@ -1,6 +1,21 @@
 let currentData = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('nav');
+  const hamburger = document.querySelector('.hamburger');
+
+  hamburger.addEventListener('click', () => {
+    const open = nav.classList.toggle('nav--open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) {
+      nav.classList.remove('nav--open');
+      hamburger.setAttribute('aria-expanded', false);
+    }
+  });
+
   const btnSearch = document.getElementById('btn-search');
   const btnDetect = document.getElementById('btn-detect');
   const btnFavorite = document.getElementById('btn-favorite');
